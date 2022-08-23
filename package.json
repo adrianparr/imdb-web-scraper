@@ -1,0 +1,19 @@
+{
+  "name": "imdb-web-scraper",
+  "version": "1.0.0",
+  "description": "Scrape movie data from the IMDb website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://adrianparr@gitlab.com/adrianparr/imdb-web-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/adrianparr/imdb-web-scraper/issues"
+  },
+  "homepage": "https://gitlab.com/adrianparr/imdb-web-scraper#readme"
+}
