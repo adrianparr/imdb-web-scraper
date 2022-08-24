@@ -6,7 +6,10 @@
   "imdb_rating": "8.9",
   "num_ratings": "2000000",
   "plot": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+  "director": "Quentin Tarantino",
+  "writers": "Quentin Tarantino, Roger Avary",
+  "actors": "John Travolta, Uma Thurman, Samuel L. Jackson, Bruce Willis, Tim Roth, Amanda Plummer, Laura Lovelace, Phil LaMarr, Frank Whaley, Burr Steers, Ving Rhames, Paul Calderon, Bronagh Gallagher, Rosanna Arquette, Eric Stoltz, Jerome Patrick Hoban, Michael Gilden, Gary Shorelle",
   "poster_image_src": "https://m.media-amazon.com/images/M/MV5BYjA2NGQzMDYtNWYwYS00NTIxLThmMzYtZmU3NDM2Y2E4M2M1XkEyXkFqcGdeQXVyNDIyNjA2MTk@._V1_QL75_UY562_CR8,0,380,562_.jpg",
   "poster_image_file_extension": "jpg",
-  "genres": "Crime,Drama"
+  "genres": "Crime, Drama"
 }

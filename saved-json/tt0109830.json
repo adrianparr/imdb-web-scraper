@@ -6,7 +6,10 @@
   "imdb_rating": "8.8",
   "num_ratings": "2000000",
   "plot": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+  "director": "Robert Zemeckis",
+  "writers": "Winston Groom, Eric Roth",
+  "actors": "Tom Hanks, Robin Wright, Gary Sinise, Sally Field, Rebecca Williams, Michael Conner Humphreys, Harold G. Herthum, George Kelly, Bob Penny, John Randall, Sam Anderson, Margo Moorer, Ione M. Telech, Christine Seabrook, John Worsham, Peter Dobson, Siobhan Fallon Hogan, Alexander Zemeckis",
   "poster_image_src": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UY562_CR4,0,380,562_.jpg",
   "poster_image_file_extension": "jpg",
-  "genres": "Drama,Romance"
+  "genres": "Drama, Romance"
 }

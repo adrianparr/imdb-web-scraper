@@ -6,7 +6,10 @@
   "imdb_rating": "5.5",
   "num_ratings": "2.2K",
   "plot": "Filmed in Welsh, the picture follows a young woman serving privileged guests at a dinner party in a remote house in rural Wales. The assembled guests do not realize they are about to eat their last supper.",
+  "director": "Lee Haven Jones",
+  "writers": "Roger Williams",
+  "actors": "Annes Elwy, Nia Roberts, Julian Lewis Jones, Steffan Cennydd, Sion Alun Davies, Rhodri Meilir, Lisa Palfrey, Chris Gordon, Caroline Berry",
   "poster_image_src": "https://m.media-amazon.com/images/M/MV5BMmI2NGU0YTktOTVkZC00YmIwLTgwZDItNDlkY2QxYzk4NTQyXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg",
   "poster_image_file_extension": "jpg",
-  "genres": "Drama,Horror,Mystery"
+  "genres": "Drama, Horror, Mystery"
 }
