@@ -1,20 +1,17 @@
 const axios = require('axios').default
 const cheerio = require('cheerio')
 const express = require('express')
-const Fs = require('fs')
-const Path = require('path')
-
-const IMDB_IDs = ['https://www.imdb.com/title/tt0110912/', 'tt0109830', 'https://www.imdb.com/title/tt10738906/']
-// const IMDB_IDs = ['tt0110912']
 const PORT = process.env.PORT || 3001
-const arrayOfData = []
-
-const { runInContext } = require('vm')
 const app = express()
 
+app.use(cors())
+
 app.listen(PORT, () => {
-  console.log(`Express server is running on http://localhost:${PORT}`)
-  // startApp()
+  if (process.env.PORT) {
+    console.log(`Express server is running on port ${PORT}`)
+  } else {
+    console.log(`Express server is running on http://localhost:${PORT}`)
+  }
 })
 
 app.get('/', (req, res) => {
@@ -146,56 +143,4 @@ const extractData = (id, html) => {
     .trim()
     .substring(2)
   return data
-}
-
-const saveJsonToFile = async (filename, json) => {
-  const jsonString = JSON.stringify(json, null, 2)
-  const filenameWithExtension = `${filename}.json`
-  await Fs.writeFile(`./saved-json/${filenameWithExtension}`, jsonString, (error) => {
-    if (error) return console.log(error)
-  })
-  return filenameWithExtension
-}
-
-const savePosterImageToFile = async (id, posterImageSrc) => {
-  console.log('id:', id)
-  console.log('posterImageSrc:', posterImageSrc)
-  const path = Path.resolve(__dirname, '../saved-poster-images', `${id}.jpg`)
-  try {
-    const response = await axios({
-      method: 'GET',
-      url: posterImageSrc,
-      responseType: 'stream',
-    })
-    response.data.pipe(Fs.createWriteStream(path))
-  } catch (err) {
-    console.log('err')
-  }
-  return id
-}
-
-const startApp = async () => {
-  console.log('startApp()')
-  for (let i = 0; i < IMDB_IDs.length; i++) {
-    const item = IMDB_IDs[i]
-    let id = ''
-    if (item.startsWith('http')) {
-      id = item.split('/')[4]
-    } else if (item.startsWith('tt')) {
-      id = item
-    }
-    console.log('================================================================================================')
-    console.log(`ID: ${id}`)
-    console.log('================================================================================================')
-    const imdbUrl = `https://www.imdb.com/title/${id}/`
-    const html = await downloadHtml(imdbUrl)
-    const data = extractData(id, html)
-    arrayOfData.push(data)
-    // const savedJsonId = await saveJsonToFile(id, data)
-    // const savedPosterImageId = await savePosterImageToFile(id, data.poster_image_src)
-  }
-  console.log('arrayOfData:', arrayOfData)
-  // await saveJsonToFile('all-movies', arrayOfData)
-  const numMoviesSaved = arrayOfData.length
-  console.log(`Number of movies saved: ${numMoviesSaved}`)
 }
