@@ -6,7 +6,7 @@ const Path = require('path')
 
 const IMDB_IDs = ['https://www.imdb.com/title/tt0110912/', 'tt0109830', 'https://www.imdb.com/title/tt10738906/']
 // const IMDB_IDs = ['tt0110912']
-const PORT = 8000
+const PORT = process.env.PORT || 3001
 const arrayOfData = []
 
 const { runInContext } = require('vm')
