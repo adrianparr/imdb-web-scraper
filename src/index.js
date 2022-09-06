@@ -6,7 +6,11 @@ const express = require('express')
 const PORT = process.env.PORT || 3001
 const app = express()
 
-app.use(cors())
+app.use(
+  cors({
+    origin: 'https://cdpn.io',
+  })
+)
 
 app.listen(PORT, () => {
   if (process.env.PORT) {
