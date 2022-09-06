@@ -1,6 +1,8 @@
 const axios = require('axios').default
 const cheerio = require('cheerio')
+const cors = require('cors')
 const express = require('express')
+
 const PORT = process.env.PORT || 3001
 const app = express()
 
