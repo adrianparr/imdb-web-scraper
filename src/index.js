@@ -2,6 +2,7 @@ const axios = require('axios').default
 const cheerio = require('cheerio')
 const cors = require('cors')
 const express = require('express')
+const formatTitle = require('./helpers/formatTitle')
 
 const PORT = process.env.PORT || 3001
 const app = express()
@@ -56,9 +57,13 @@ const extractData = (id, html) => {
   $.html()
   data.imdb_id = id
   data.imdb_url = `https://www.imdb.com/title/${id}/`
-  data.title = $(
+
+  const title = $(
     '#__next > main > div > section.ipc-page-background.ipc-page-background--base.sc-ca85a21c-0.efoFqn > section > div:nth-child(4) > section > section > div.sc-80d4314-0.fjPRnj > div.sc-80d4314-1.fbQftq > h1'
   ).text()
+  data.title = title
+  data.title_formatted = formatTitle(title)
+
   data.year = $(
     '#__next > main > div > section.ipc-page-background.ipc-page-background--base.sc-ca85a21c-0.efoFqn > section > div:nth-child(4) > section > section > div.sc-80d4314-0.fjPRnj > div.sc-80d4314-1.fbQftq > div > ul > li:nth-child(1) > span'
   ).text()
