@@ -29,16 +29,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:imdb_id', async (req, res) => {
-  const id = req.params['imdb_id']
-  const imdbUrl = `https://www.imdb.com/title/${id}/`
-  console.log('imdbUrl:', imdbUrl)
-  let data = {}
-  do {
-    const html = await downloadHtml(imdbUrl)
-    data = extractData(id, html)
-  } while (data.plot === '')
-  res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(data))
+  let id = req.params['imdb_id']
+  id = id.trim().toLowerCase()
+  if (id.substring(0, 2) === 'tt') {
+    const imdbUrl = `https://www.imdb.com/title/${id}/`
+    console.log('imdbUrl:', imdbUrl)
+    let data = {}
+    do {
+      const html = await downloadHtml(imdbUrl)
+      data = extractData(id, html)
+    } while (data.plot === '')
+    res.setHeader('Content-Type', 'application/json')
+    res.send(JSON.stringify(data))
+  }
 })
 
 const downloadHtml = async (url) => {
