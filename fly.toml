@@ -1,6 +1,6 @@
-# fly.toml file generated for imdb-web-scraper on 2022-09-08T11:09:41+01:00
+# fly.toml file generated for throbbing-wave-4660 on 2022-09-08T11:45:31+01:00
 
-app = "imdb-web-scraper"
+app = "throbbing-wave-4660"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
