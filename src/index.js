@@ -2,9 +2,11 @@ const axios = require('axios').default
 const cheerio = require('cheerio')
 const cors = require('cors')
 const express = require('express')
+const os = require('os')
 const formatTitle = require('./helpers/formatTitle')
 
-const PORT = process.env.PORT || 3001
+const isLocalhost = os.hostname().indexOf('local') > -1
+const PORT = isLocalhost ? 3001 : process.env.PORT
 const app = express()
 
 app.use(
@@ -14,10 +16,10 @@ app.use(
 )
 
 app.listen(PORT, () => {
-  if (process.env.PORT) {
-    console.log(`Express server is running on port ${PORT}`)
-  } else {
+  if (isLocalhost) {
     console.log(`Express server is running on http://localhost:${PORT}`)
+  } else {
+    console.log(`Express server is running on port ${PORT}`)
   }
 })
 
