@@ -6,7 +6,7 @@ const os = require('os')
 const formatTitle = require('./helpers/formatTitle')
 
 const isLocalhost = os.hostname().indexOf('local') > -1
-const PORT = isLocalhost ? 3001 : process.env.PORT
+const PORT = process.env.PORT || 3000
 const app = express()
 
 app.use(
